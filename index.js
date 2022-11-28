@@ -66,10 +66,23 @@ function processAICoordinate() {
 
 // this function is called when the user clicks on 
 // the button labeled `Restart Game`
-function resetGame() {
+function resetGame(selectedValue) {
     console.log(`resetGame()`);
+    
+    // setGameMode();
+    // resetBoard();
+    //document.getElementsByClassName('mode')[0].value="";
+
+    // setHTMLvisibilityForInputGameMode(true);
+    setHTMLvisibilityForInputHumanCoordinates(false);
+    setHTMLvisibilityForInputAiCoordinatesInput(false);
+    // setHTMLvisibilityForButtonLabeledReset(false);
+    // displayMessage("Select Game Mode");
+    // displayBoard(board)
+    location.reload()
 }
 
+    
 // this function should change from A1..C3 to coordinates
 // that are present in the `board` global variable
 function extractCoordinates(input) {
