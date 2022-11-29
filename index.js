@@ -138,9 +138,10 @@ function extractCoordinates(input) {
     }else if(input == 'c3'){
         coordinates.x = 2;
         coordinates.y = 2; 
-    }else if(coordinates.x > 2 || coordinates.y > 2){
+    }else {
         displayMessage("Invalid coordinate entered");
-        
+        coordinates.x = 4;
+        coordinates.y = 4;
         // ?   
     }
     // this is a sample of what should be returned if the
