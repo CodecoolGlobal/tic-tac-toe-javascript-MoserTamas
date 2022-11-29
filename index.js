@@ -58,7 +58,9 @@ function processHumanCoordinate(input) {
         // It's a tie
         // Player X won 
         // Player O won 
-    
+        if (selectedValue === 'human-ai') {
+            setHTMLvisibilityForInputHumanCoordinates(false)
+        }
         // TODO: add conditions to hide the coordinates screen for 
         // the human player & show for the button to generate AI 
         // coordinates
@@ -136,8 +138,9 @@ function extractCoordinates(input) {
     }else if(input == 'c3'){
         coordinates.x = 2;
         coordinates.y = 2; 
-    }else {
+    }else if(coordinates.x > 2 || coordinates.y > 2){
         displayMessage("Invalid coordinate entered");
+        
         // ?   
     }
     // this is a sample of what should be returned if the
