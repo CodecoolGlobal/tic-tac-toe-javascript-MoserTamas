@@ -77,8 +77,15 @@ function processHumanCoordinate(input) {
 // this function is called whenever the user presses
 // the button labeled `Generate AI coordinates`
 function processAICoordinate() {
-    console.log(`processAICoordinate()`);
-   
+    let row = ["a","b","c"]
+    let random = Math.floor(Math.random()*3)
+    let x = row[random]
+    let y = Math.floor(Math.random()*3)
+    if(board[parseInt(random)][parseInt(y)-1] === ""){
+    processHumanCoordinate(x+y)
+    }else{
+        processAICoordinate()
+    }
 }
 
 // this function is called when the user clicks on 
