@@ -80,7 +80,7 @@ function processAICoordinate() {
     let row = ["a","b","c"]
     let random = Math.floor(Math.random()*3)
     let x = row[random]
-    let y = Math.floor(Math.random()*3)
+    let y = Math.floor(Math.random()*3)+1
     if(board[parseInt(random)][parseInt(y)-1] === ""){
     processHumanCoordinate(x+y)
     }else{
