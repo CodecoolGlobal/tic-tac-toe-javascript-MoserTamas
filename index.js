@@ -19,10 +19,13 @@ function setGameMode(selectedValue) {
 
     setHTMLvisibilityForInputGameMode(false);
     setHTMLvisibilityForInputHumanCoordinates(true);
-    setHTMLvisibilityForInputAiCoordinatesInput(true);
+    setHTMLvisibilityForInputAiCoordinatesInput(false);
     setHTMLvisibilityForButtonLabeledReset(true);
     displayMessage("Player X's turn");
-}
+    if (isPlayerYHuman === false){
+        setHTMLvisibilityForInputAiCoordinatesInput(true)
+    }
+    }
 
 // this function is called whenever the user presses the `enter`
 // key in the input box labeled `enter coordinates`
@@ -74,12 +77,8 @@ function processHumanCoordinate(input) {
 // this function is called whenever the user presses
 // the button labeled `Generate AI coordinates`
 function processAICoordinate() {
-    // console.log(`processAICoordinate()`);
-    // if (selectedValue === 'human-ai') {
-    //     setHTMLvisibilityForInputHumanCoordinates(false);
-    //     setHTMLvisibilityForInputAiCoordinatesInput(true);
-
-    // }
+    console.log(`processAICoordinate()`);
+   
 }
 
 // this function is called when the user clicks on 
