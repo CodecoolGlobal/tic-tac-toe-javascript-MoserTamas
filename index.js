@@ -66,30 +66,59 @@ function processAICoordinate() {
 
 // this function is called when the user clicks on 
 // the button labeled `Restart Game`
-function resetGame(selectedValue) {
-    console.log(`resetGame()`);
-    
-    // setGameMode();
-    // resetBoard();
-    //document.getElementsByClassName('mode')[0].value="";
-
-    // setHTMLvisibilityForInputGameMode(true);
-    setHTMLvisibilityForInputHumanCoordinates(false);
-    setHTMLvisibilityForInputAiCoordinatesInput(false);
-    // setHTMLvisibilityForButtonLabeledReset(false);
-    // displayMessage("Select Game Mode");
-    // displayBoard(board)
-    location.reload()
+function resetGame() {
+    resetBoard();
+    displayBoard(board);
+    setHTMLvisibilityForInputGameMode(true)
+    setHTMLvisibilityForButtonLabeledReset(false)
+    setHTMLvisibilityForInputHumanCoordinates(false)
+    setHTMLvisibilityForInputAiCoordinatesInput(false)
+    document.getElementsByClassName('mode')[0].getElementsByTagName('option')[0].selected = "selected";
+    console.log("resetGame()");
+    //location.reload()
 }
+
+
 
     
 // this function should change from A1..C3 to coordinates
 // that are present in the `board` global variable
 function extractCoordinates(input) {
+    let arr = [];
+    if(input == 'a1' && !arr.includes('a1') ){
+        {x = 0, y = 0}; 
+        arr.push('a1');
+    }else if(input == 'a2' && arr[1] != 1){
+        {x = 0, y = 1};
+        arr.push[1] = 1;
+    }else if(input == 'a3' && arr[2] != 1){
+        {x = 0, y = 2};
+        arr.push[2] = 1;
+    }else if(input == 'b1' && arr[3] != 1){
+        {x = 1, y = 0};
+        arr.push[3] = 1;
+    }else if(input == 'b2' && arr[4] != 1){
+        {x = 1, y = 1};
+        arr.push[4] = 1;
+    }else if(input == 'b3' && arr[5] != 1){
+        {x = 1, y = 2};
+        arr.push[5] = 1;
+    }else if(input == 'c1' && arr[6] != 1){
+        {x = 2, y = 0};
+        arr.push[6] = 1;
+    }else if(input == 'c2' && arr[7] != 1){
+        {x = 2, y = 1};
+        arr.push[7] = 1;
+    }else if(input == 'c3' && arr[8] != 1){
+        {x = 2, y = 2};
+        arr.push[8] = 1;
+    }else {
+        displayMessage("This cell is taken")
+    }
     // this is a sample of what should be returned if the
     // the user had typed `A1`
     // you need to add the to also treat other cases (A2..C3)
-    return { x: 0, y: 0};
+    return { x, y};
 }
 
 // this function should return `X` or `O` or undefined (carefull it's not a string )
