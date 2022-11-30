@@ -88,7 +88,7 @@ function processHumanCoordinate(input) {
         displayMessage("Position is already taken on board");
     }
 
-
+getWinningPlayer(board)
 }
 
 // this function is called whenever the user presses
@@ -121,6 +121,7 @@ function resetGame() {
     setHTMLvisibilityForInputAiCoordinatesInput(false)
     document.getElementsByClassName('mode')[0].getElementsByTagName('option')[0].selected = "selected";
     console.log("resetGame()");
+    displayMessage("")
     //location.reload()
 }
 
@@ -195,8 +196,11 @@ function getWinningPlayer(board) {
         [2,5,8],
         [3,6,9],
     ];
-    if (board[0][1,2,3] == "diamond"){
-        displayMessage("Diamond won!")
+    if (board[0][0] == "diamond" && board[0][1] == "diamond" && board[0][2] == "diamond" ){
+        displayMessage("Diamond won!");
+        setHTMLvisibilityForInputHumanCoordinates(false)
+        setHTMLvisibilityForInputAiCoordinatesInput(false)
+        
     } else{
 
     return undefined;}
