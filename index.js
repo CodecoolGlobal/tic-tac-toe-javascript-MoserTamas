@@ -196,7 +196,7 @@ function getWinningPlayer(board) {
 // }
 
 
-    if (board[0][0] == "diamond" && board[0][1] == "diamond" && board[0][2] == "diamond" ){
+if (board[0][0] == "diamond" && board[0][1] == "diamond" && board[0][2] == "diamond" ){
         displayMessage("Pets won!");
         setHTMLvisibilityForInputHumanCoordinates(false)
         setHTMLvisibilityForInputAiCoordinatesInput(false)
@@ -274,17 +274,19 @@ function getWinningPlayer(board) {
     } else if(board[2][0] == "pets" && board[1][1] == "pets" && board[0][2] == "pets" ){
         displayMessage("Pets won!");
         setHTMLvisibilityForInputHumanCoordinates(false)
-        setHTMLvisibilityForInputAiCoordinatesInput(false)   }
+        setHTMLvisibilityForInputAiCoordinatesInput(false) } 
+        else if (board[0][0] != "" && board[0][1] != "" && board[0][2] != "" &&
+        board[1][0] != "" && board[1][1] != "" && board[1][2] != "" &&
+        board[2][0] != "" && board[2][1] != "" && board[2][2] != ""){
+            displayMessage("It's a tie!");
+        setHTMLvisibilityForInputHumanCoordinates(false)
+        setHTMLvisibilityForInputAiCoordinatesInput(false)
+        }
+    }
+        
    
 
-if (board[0][0] != "" && board[0][1] != "" && board[0][2] != "" &&
-    board[1][0] != "" && board[1][1] != "" && board[1][2] != "" &&
-    board[2][0] != "" && board[2][1] != "" && board[2][2] != ""){
-        displayMessage("It's a tie!");
-    setHTMLvisibilityForInputHumanCoordinates(false)
-    setHTMLvisibilityForInputAiCoordinatesInput(false)
-    }
-}
+
 
 
 
