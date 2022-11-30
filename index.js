@@ -33,14 +33,29 @@ function setGameMode(selectedValue) {
 function processHumanCoordinate(input) {
     console.log(`'processHumanCoordinate('${input}')`);
 
+  if (isPlayerXHuman === true && isPlayerYHuman === false){
+
     if (gameTurn % 2 === 0) {
         currentPlayer = 'diamond';
+        setHTMLvisibilityForInputAiCoordinatesInput(true)
+        setHTMLvisibilityForInputHumanCoordinates(false)
         displayMessage("Player Pets turn");
     } else {
         currentPlayer = 'pets';
+        setHTMLvisibilityForInputAiCoordinatesInput(false)
+        setHTMLvisibilityForInputHumanCoordinates(true)
         displayMessage("Player Diamond turn");
-    }
+    }}
 
+    else {
+        if (gameTurn % 2 === 0) {
+            currentPlayer = 'diamond';
+            displayMessage("Player Pets turn");
+        } else {
+            currentPlayer = 'pets';
+            displayMessage("Player Diamond turn");
+    }
+    }
     let coordinates = extractCoordinates(input);
 
     // üres cella ?
@@ -68,6 +83,8 @@ function processHumanCoordinate(input) {
 
 
     } else {
+        gameTurn -= 1;
+        
         displayMessage("Position is already taken on board");
     }
 
@@ -77,15 +94,20 @@ function processHumanCoordinate(input) {
 // this function is called whenever the user presses
 // the button labeled `Generate AI coordinates`
 function processAICoordinate() {
+   // if (isPlayerYHuman === false){
+    //setHTMLvisibilityForInputAiCoordinatesInput(false)}
+  
+    
     let row = ["a","b","c"]
     let random = Math.floor(Math.random()*3)
     let x = row[random]
     let y = Math.floor(Math.random()*3)+1
-    if(board[parseInt(random)][parseInt(y)-1] === ""){
+    if(board[random][y-1] === ""){
     processHumanCoordinate(x+y)
     }else{
         processAICoordinate()
     }
+
 }
 
 // this function is called when the user clicks on 
@@ -161,10 +183,21 @@ function extractCoordinates(input) {
 // this function should return `X` or `O` or undefined (carefull it's not a string )
 // based on interpreting the values in the board variable
 function getWinningPlayer(board) {
-    
+    let playerx = "diamond"
+    let playero = "pets"
+    const winnercombinations = [
+        [1,2,3],
+        [4,5,6],
+        [7,8,9],
+        [1,5,9],
+        [3,5,7],
+        [1,4,7],
+        [2,5,8],
+        [3,6,9],
+    ];
+    if (board[0][1,2,3] == "diamond"){
+        displayMessage("Diamond won!")
+    } else{
 
-
-
-
-    return undefined;
+    return undefined;}
 }
