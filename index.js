@@ -184,24 +184,90 @@ function extractCoordinates(input) {
 // this function should return `X` or `O` or undefined (carefull it's not a string )
 // based on interpreting the values in the board variable
 function getWinningPlayer(board) {
-    let playerx = "diamond"
-    let playero = "pets"
-    const winnercombinations = [
-        [1,2,3],
-        [4,5,6],
-        [7,8,9],
-        [1,5,9],
-        [3,5,7],
-        [1,4,7],
-        [2,5,8],
-        [3,6,9],
-    ];
+    //Sorok
     if (board[0][0] == "diamond" && board[0][1] == "diamond" && board[0][2] == "diamond" ){
+        displayMessage("Pets won!");
+        setHTMLvisibilityForInputHumanCoordinates(false)
+        setHTMLvisibilityForInputAiCoordinatesInput(false)
+        
+    } else if(board[1][0] == "diamond" && board[1][1] == "diamond" && board[1][2] == "diamond" ){
         displayMessage("Diamond won!");
         setHTMLvisibilityForInputHumanCoordinates(false)
         setHTMLvisibilityForInputAiCoordinatesInput(false)
         
-    } else{
-
-    return undefined;}
+    } else if(board[2][0] == "diamond" && board[2][1] == "diamond" && board[2][2] == "diamond" ){
+        displayMessage("Diamond won!");
+        setHTMLvisibilityForInputHumanCoordinates(false)
+        setHTMLvisibilityForInputAiCoordinatesInput(false)
+     //oszlopok   
+    } else if(board[0][0] == "diamond" && board[1][0] == "diamond" && board[2][0] == "diamond" ){
+        displayMessage("Diamond won!");
+        setHTMLvisibilityForInputHumanCoordinates(false)
+        setHTMLvisibilityForInputAiCoordinatesInput(false)
+        
+    } else if(board[0][1] == "diamond" && board[1][1] == "diamond" && board[2][1] == "diamond" ){
+        displayMessage("Diamond won!");
+        setHTMLvisibilityForInputHumanCoordinates(false)
+        setHTMLvisibilityForInputAiCoordinatesInput(false)
+        
+    } else if(board[0][2] == "diamond" && board[1][2] == "diamond" && board[2][2] == "diamond" ){
+        displayMessage("Diamond won!");
+        setHTMLvisibilityForInputHumanCoordinates(false)
+        setHTMLvisibilityForInputAiCoordinatesInput(false)
+        //Diagonally
+    } else if(board[0][0] == "diamond" && board[1][1] == "diamond" && board[2][2] == "diamond" ){
+        displayMessage("Diamond won!");
+        setHTMLvisibilityForInputHumanCoordinates(false)
+        setHTMLvisibilityForInputAiCoordinatesInput(false)
+        
+    } else if(board[2][0] == "diamond" && board[1][1] == "diamond" && board[0][2] == "diamond" ){
+        displayMessage("Diamond won!");
+        setHTMLvisibilityForInputHumanCoordinates(false)
+        setHTMLvisibilityForInputAiCoordinatesInput(false)
+       //Sorok 
+    } else if(board[0][0] == "pets" && board[0][1] == "pets" && board[0][2] == "pets" ){
+        displayMessage("Pets won!");
+        setHTMLvisibilityForInputHumanCoordinates(false)
+        setHTMLvisibilityForInputAiCoordinatesInput(false)
+        
+    } else if(board[1][0] == "pets" && board[1][1] == "pets" && board[1][2] == "pets" ){
+        displayMessage("Pets won!");
+        setHTMLvisibilityForInputHumanCoordinates(false)
+        setHTMLvisibilityForInputAiCoordinatesInput(false)
+        
+    } else if(board[2][0] == "pets" && board[2][1] == "pets" && board[2][2] == "pets" ){
+        displayMessage("Pets won!");
+        setHTMLvisibilityForInputHumanCoordinates(false)
+        setHTMLvisibilityForInputAiCoordinatesInput(false)
+        //Oszlopok
+    } else if(board[0][0] == "pets" && board[1][0] == "pets" && board[2][0] == "pets" ){
+        displayMessage("Pets won!");
+        setHTMLvisibilityForInputHumanCoordinates(false)
+        setHTMLvisibilityForInputAiCoordinatesInput(false)
+        
+    } else if(board[0][1] == "pets" && board[1][1] == "pets" && board[2][1] == "pets" ){
+        displayMessage("Pets won!");
+        setHTMLvisibilityForInputHumanCoordinates(false)
+        setHTMLvisibilityForInputAiCoordinatesInput(false)
+        
+    } else if(board[0][2] == "pets" && board[1][2] == "pets" && board[2][2] == "pets" ){
+        displayMessage("Pets won!");
+        setHTMLvisibilityForInputHumanCoordinates(false)
+        setHTMLvisibilityForInputAiCoordinatesInput(false)
+        //Diagonally
+    } else if(board[0][0] == "pets" && board[1][1] == "pets" && board[2][2] == "pets" ){
+        displayMessage("Pets won!");
+        setHTMLvisibilityForInputHumanCoordinates(false)
+        setHTMLvisibilityForInputAiCoordinatesInput(false)
+        
+    } else if(board[2][0] == "pets" && board[1][1] == "pets" && board[0][2] == "pets" ){
+        displayMessage("Pets won!");
+        setHTMLvisibilityForInputHumanCoordinates(false)
+        setHTMLvisibilityForInputAiCoordinatesInput(false)   
+    }
+    
+    return undefined;
 }
+
+
+    
