@@ -47,15 +47,15 @@ function processHumanCoordinate(input) {
         displayMessage("Player Diamond turn");
     }}
 
-    // else {
-    //     if (gameTurn % 2 === 0) {
-    //         currentPlayer = 'diamond';
-    //         displayMessage("Player Pets turn");
-    //     } else {
-    //         currentPlayer = 'pets';
-    //         displayMessage("Player Diamond turn");
-    // }
-    // }
+    else {
+        if (gameTurn % 2 === 0) {
+            currentPlayer = 'diamond';
+            displayMessage("Player Pets turn");
+        } else {
+            currentPlayer = 'pets';
+            displayMessage("Player Diamond turn");
+    }
+    }
     let coordinates = extractCoordinates(input);
 
     // üres cella ?
