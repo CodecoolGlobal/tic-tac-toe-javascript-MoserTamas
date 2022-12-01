@@ -82,13 +82,19 @@ function processHumanCoordinate(input) {
         // coordinates
 
 
-    } else {
+    } else if (isPlayerXHuman === true && isPlayerYHuman === true){
         gameTurn -= 2;
         displayMessage("Position is already taken on board");
+    } else if (isPlayerXHuman === true && isPlayerYHuman === false){
+        gameTurn -= 2;
+        displayMessage("Position is already taken on board");
+        setHTMLvisibilityForInputAiCoordinatesInput(false);
+        setHTMLvisibilityForInputHumanCoordinates(true)
     }
 
 getWinningPlayer(board)
 }
+
 
 // this function is called whenever the user presses
 // the button labeled `Generate AI coordinates`
@@ -106,7 +112,6 @@ function processAICoordinate() {
     }else{
         processAICoordinate()
     }
-
 }
 
 // this function is called when the user clicks on 
