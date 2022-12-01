@@ -22,8 +22,8 @@ function setGameMode(selectedValue) {
     setHTMLvisibilityForInputAiCoordinatesInput(false);
     setHTMLvisibilityForButtonLabeledReset(true);
     displayMessage("Player X's turn");
-    if (isPlayerYHuman === false){
-        setHTMLvisibilityForInputAiCoordinatesInput(true)
+     if (isPlayerYHuman === false){
+        setHTMLvisibilityForInputAiCoordinatesInput(false)
     }
     }
 
@@ -47,15 +47,15 @@ function processHumanCoordinate(input) {
         displayMessage("Player Diamond turn");
     }}
 
-    else {
-        if (gameTurn % 2 === 0) {
-            currentPlayer = 'diamond';
-            displayMessage("Player Pets turn");
-        } else {
-            currentPlayer = 'pets';
-            displayMessage("Player Diamond turn");
-    }
-    }
+    // else {
+    //     if (gameTurn % 2 === 0) {
+    //         currentPlayer = 'diamond';
+    //         displayMessage("Player Pets turn");
+    //     } else {
+    //         currentPlayer = 'pets';
+    //         displayMessage("Player Diamond turn");
+    // }
+    // }
     let coordinates = extractCoordinates(input);
 
     // üres cella ?
@@ -109,8 +109,6 @@ function processAICoordinate() {
     let y = Math.floor(Math.random()*3)+1
     if(board[random][y-1] === ""){
     processHumanCoordinate(x+y);
-    setHTMLvisibilityForInputAiCoordinatesInput(false)
-    setHTMLvisibilityForInputHumanCoordinates(true)
     }else{
         processAICoordinate()
     }
