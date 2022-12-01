@@ -86,7 +86,7 @@ function processHumanCoordinate(input) {
         gameTurn -= 2;
         displayMessage("Position is already taken on board");
     } else if (isPlayerXHuman === true && isPlayerYHuman === false){
-        gameTurn -= 2;
+        gameTurn = gameTurn;
         displayMessage("Position is already taken on board");
         setHTMLvisibilityForInputAiCoordinatesInput(false);
         setHTMLvisibilityForInputHumanCoordinates(true)
@@ -289,10 +289,3 @@ if (board[0][0] == "diamond" && board[0][1] == "diamond" && board[0][2] == "diam
         }
     }
         
-   
-
-
-
-
-
-    
