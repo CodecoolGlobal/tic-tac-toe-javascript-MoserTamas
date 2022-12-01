@@ -176,6 +176,9 @@ function extractCoordinates(input) {
         coordinates.y = 2;
     } else {
         displayMessage("Invalid coordinate entered");
+        gameTurn = gameTurn;
+        setHTMLvisibilityForInputHumanCoordinates(true)
+        setHTMLvisibilityForInputAiCoordinatesInput(false)
         coordinates.x = 4;
         coordinates.y = 4;
         // ?   
