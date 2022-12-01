@@ -108,7 +108,9 @@ function processAICoordinate() {
     let x = row[random]
     let y = Math.floor(Math.random()*3)+1
     if(board[random][y-1] === ""){
-    processHumanCoordinate(x+y)
+    processHumanCoordinate(x+y);
+    setHTMLvisibilityForInputAiCoordinatesInput(false)
+    setHTMLvisibilityForInputHumanCoordinates(true)
     }else{
         processAICoordinate()
     }
@@ -126,6 +128,7 @@ function resetGame() {
     document.getElementsByClassName('mode')[0].getElementsByTagName('option')[0].selected = "selected";
     console.log("resetGame()");
     displayMessage("")
+    gameTurn = 0
     //location.reload()
 }
 
